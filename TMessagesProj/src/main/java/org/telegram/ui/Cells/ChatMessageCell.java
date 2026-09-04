@@ -13375,8 +13375,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             topNearToSet = topNear;
             firstInChatToSet = firstInChat;
             lastInChatListToSet = lastInChatList;
-        }
-    }
+
+            if (messageObject != null && messageObject.deleted) {
+                        setAlpha(0.65f);
+                                } else {
+                                            setAlpha(1.0f);
+                                                    }
+                                                        }
+                                                    
 
     private boolean frozen;
     public void freezeCell(boolean freeze) {
