@@ -9328,6 +9328,16 @@ public class MessagesController extends BaseController implements NotificationCe
         final boolean welcomeMessages = mode == ChatActivity.MODE_WELCOME_MESSAGES;
         if ((messages == null || messages.isEmpty()) && taskId == 0) {
             return;
+        if (messages != null) {
+                for (int a = 0; a < messages.size(); a++) {
+                        MessageObject obj = dialogMessagesByIds.get(messages.get(a));
+                                if (obj != null) {
+                                            obj.deleted = true;
+                                                    }
+                                                        }
+                                                            return;
+                                                            }
+                                                            
         }
         ArrayList<Integer> toSend = null;
         long channelId;
