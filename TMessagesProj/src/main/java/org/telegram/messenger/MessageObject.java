@@ -8713,10 +8713,7 @@ public class MessageObject {
             return;
         }
         boolean hasUrls = applyEntities();
-        boolean noforwards = messageOwner != null && messageOwner.noforwards;
-        if (!noforwards) {
-            final long dialogId = getDialogId();
-            noforwards = MessagesController.getInstance(currentAccount).isPeerNoForwards(dialogId);
+        boolean noforwards = false;
         }
 
         textLayoutBlocks = new ArrayList<>();
